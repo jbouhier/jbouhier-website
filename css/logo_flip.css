@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+#logogo:hover #logo {
+  -webkit-transform: rotateY(360deg);
+  -moz-transform: rotateY(360deg);
+  -o-transform: rotateY(360deg);
+  -ms-transform: rotateY(360deg);
+  transform: rotateY(360deg);
+  -webkit-transition: -webkit-transform 2s;
+  -moz-transition: -moz-transform 2s;
+  -o-transition: -o-transform 2s;
+  -ms-transition: -ms-transform 2s;
+  transition: transform 2s;
+}
+
+#logo {
+  background: #54A6B1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+}
+
+#logo_href {
+  /*display: inline-block;*/
+  display: block;
+  -webkit-transition: -webkit-transform 2s;
+  -moz-transition: -moz-transform 2s;
+  -o-transition: -o-transform 2s;
+  -ms-transition: -ms-transform 2s;
+  transition: transform 2s;
+}
+
+.circle {
+  width: 0.8em;
+  height: 0.8em;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: white;
+  float: left;
+}
+
+.empty {
+  width: 0.8em;
+  height: 0.8em;
+  background: none;
+  -moz-border-radius: 50%;
+  -webkit-border-radius:50%;
+  border-radius: 50%;
+  float: left;
+}
+
+.vspace {
+  height: 0.4em;
+  background: none;
+  clear: both;
+}
+
+.hspace {
+  height: 0.8em;
+  width: 0.4em;
+  background: none;
+  float: left;
+}
+
+.clear {
+  clear: both;
+}
