@@ -1,5 +1,6 @@
 # jbouhier.github.io
 
-A single page website writting in plain old HTML and CSS.
+Single page in plain old HTML and CSS.
 
-Written in 2013
+Created in 2013  
+Last update 23/04/2018
