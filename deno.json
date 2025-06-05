@@ -1,0 +1,74 @@
+{
+  "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
+  "version": "2.3.5",
+  "nodeModulesDir": "auto",
+  "name": "jbouhier",
+  "description": "JB Bouhier - Personal Website",
+  "private": true,
+  "type": "module",
+  "exports": "./astro.config.mjs",
+
+  "tasks": {
+    "astro": "deno run -A npm:astro",
+    "install": "deno cache --reload astro.config.mjs",
+    "dev": "deno run -A npm:astro dev",
+    "start": "deno task dev",
+    "build": "deno run -A npm:astro build",
+    "preview": "deno run -A npm:astro preview",
+    "format": "deno fmt",
+    "lint": "deno lint",
+    "check": "deno lint && deno check **/*.ts",
+    "deploy": "deno task build && deno run -A npm:gh-pages@6.1.1 -d dist"
+  },
+
+  "imports": {
+    "@astrojs/check": "npm:@astrojs/check@^0.9.4",
+    "@astrojs/tailwind": "npm:@astrojs/tailwind@6.0.2",
+    "@astrojs/mdx": "npm:@astrojs/mdx@4.3.0",
+    "@astrojs/sitemap": "npm:@astrojs/sitemap@3.4.1",
+    "@astrojs/rss": "npm:@astrojs/rss@4.0.12",
+    "@astrojs/node": "npm:@astrojs/node@9.2.2",
+    "@iconify-json/fa6-brands": "npm:@iconify-json/fa6-brands@^1.2.5",
+    "astro": "npm:astro@5.8.2",
+    "@fontsource/inter": "npm:@fontsource/inter@5.2.5",
+    "@js-temporal/polyfill": "npm:@js-temporal/polyfill@0.5.1",
+    "astro-compress": "npm:astro-compress@2.3.8",
+    "astro-icon": "npm:astro-icon@^1.1.5",
+    "@tailwindcss/typography": "npm:@tailwindcss/typography@0.5.13",
+    "sharp": "npm:sharp@0.34.2",
+    "gh-pages": "npm:gh-pages@6.1.1",
+    "typescript": "npm:typescript@^5.8.3"
+  },
+
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "strict": true
+  },
+
+  "lint": {
+    "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "**/*.mjs"],
+    "exclude": ["**/node_modules", "**/dist", "**/.astro"]
+  },
+
+  "fmt": {
+    "include": [
+      "**/*.ts",
+      "**/*.tsx",
+      "**/*.js",
+      "**/*.jsx",
+      "**/*.mjs",
+      "**/*.json",
+      "**/*.md"
+    ],
+    "exclude": ["**/node_modules", "**/dist", "**/.astro"],
+    "options": {
+      "useTabs": false,
+      "lineWidth": 80,
+      "indentWidth": 2,
+      "singleQuote": true,
+      "semi": false
+    }
+  }
+}

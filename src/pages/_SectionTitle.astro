@@ -1,0 +1,15 @@
+---
+interface Props {
+  title: string
+  className?: string
+}
+
+const { title, className = '' } = Astro.props
+---
+
+<h2 class={`text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center ${className}`}>
+  <span class="relative inline-block">
+    <span class="relative z-10">{title}</span>
+    <span class="absolute bottom-1 left-0 w-full h-3 bg-blue-100 dark:bg-blue-900/50 -z-0 opacity-70"></span>
+  </span>
+</h2>

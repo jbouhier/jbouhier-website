@@ -1,0 +1,18 @@
+{
+  "imports": {
+    "@astrojs/tailwind": "npm:@astrojs/tailwind@6.0.2",
+    "@astrojs/mdx": "npm:@astrojs/mdx@4.3.0",
+    "@astrojs/sitemap": "npm:@astrojs/sitemap@3.4.1",
+    "@astrojs/rss": "npm:@astrojs/rss@4.0.12",
+    "astro": "npm:astro@5.8.2",
+    "@fontsource/inter": "npm:@fontsource/inter@5.2.5",
+    "@js-temporal/polyfill": "npm:@js-temporal/polyfill@0.5.1",
+    "astro-compress": "npm:astro-compress@2.3.8",
+    "astro-icon": "npm:astro-icon@1.1.5",
+    "tailwindcss": "npm:tailwindcss@3.4.1",
+    "@tailwindcss/typography": "npm:@tailwindcss/typography@0.5.16",
+    "autoprefixer": "npm:autoprefixer@10.4.21",
+    "postcss": "npm:postcss@8.5.4",
+    "postcss-nesting": "npm:postcss-nesting@12.1.2"
+  }
+}
