@@ -3,12 +3,10 @@ export const SITE = {
   description: 'Software Engineer & Founder',
 }
 
-type IconName = 'x-twitter' | 'bluesky' | 'youtube' | 'linkedin-in' | 'github'
-
 export interface SocialLink {
   title: string
   url: string
-  iconName: IconName
+  iconName: string
 }
 
 export const socialLinks: SocialLink[] = [
