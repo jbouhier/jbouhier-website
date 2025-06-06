@@ -14,9 +14,8 @@
     "start": "deno task dev",
     "build": "deno run -A npm:astro build",
     "preview": "deno run -A npm:astro preview",
-    "format": "deno fmt",
-    "lint": "deno lint",
-    "check": "deno lint && deno check **/*.ts",
+    "lint": "deno run -A npm:@biomejs/biome check .",
+    "format": "deno run -A npm:@biomejs/biome format .",
     "deploy": "deno task build && deno run -A npm:gh-pages@6.1.1 -d dist"
   },
 

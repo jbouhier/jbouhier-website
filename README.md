@@ -8,22 +8,25 @@ My personal website
 
 - [asdf](https://asdf-vm.com)
 - [Deno](https://deno.land/) 2.3.5+
-- [VS Code](https://code.visualstudio.com/) (recommended)
-- [Deno VS Code Extension](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno)
+- `deno install -A -n biome npm:@biomejs/biome`
+- [VS Code](https://code.visualstudio.com/) (or Windsurf)
+- [Deno VS Code extension](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno)
+- [Biome VS Code extension](https://marketplace.visualstudio.com/items?itemName=biomejs.biome)
 
 ## 🛠️ Commands
 
 | Command               | Action                                                            |
 | :-------------------- | :---------------------------------------------------------------- |
-| `deno task install`   | Install and cache dependencies                                    |
-| `deno task dev`       | Start local dev server (default: http://localhost:4323)           |
-| `deno task build`     | Build for production (outputs to `./dist/`)                       |
+| `deno task dev`       | Install dependencies and start local server                       |
+| `deno task build`     | Build for production (to `./dist/`)                               |
 | `deno task preview`   | Preview production build locally                                  |
-| `deno task format`    | Format code with Deno formatter                                   |
-| `deno task lint`      | Lint code with Deno linter                                        |
-| `deno task check`     | Type check your code                                              |
+| `deno task format`    | Format code with Biome                                            |
+| `deno task lint`      | Lint code with Biome                                              |
 | `deno task deploy`    | Build and deploy to GitHub Pages                                  |
-| `deno task astro ...` | [Astro CLI](https://docs.astro.build/en/reference/cli-reference/) |
+
+More commands:
+- [Deno CLI](https://docs.deno.com/runtime/reference/cli)
+- [Astro CLI](https://docs.astro.build/en/reference/cli-reference/)
 
 ## 🛠️ Tech Stack
 
