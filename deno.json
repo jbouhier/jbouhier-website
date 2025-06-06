@@ -10,7 +10,6 @@
 
   "tasks": {
     "astro": "deno run -A npm:astro",
-    "install": "deno cache --reload astro.config.mjs",
     "dev": "deno run -A npm:astro dev",
     "start": "deno task dev",
     "build": "deno run -A npm:astro build",

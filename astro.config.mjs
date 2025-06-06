@@ -25,7 +25,7 @@ export default defineConfig({
     }),
     icon({
       include: {
-        'fa6-brands': ['*'],
+        'fa6-brands': ['x-twitter', 'bluesky', 'youtube', 'linkedin-in', 'github'],
       },
     }),
   ],
