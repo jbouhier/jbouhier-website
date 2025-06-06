@@ -17,7 +17,7 @@ My personal website
 
 | Command               | Action                                                            |
 | :-------------------- | :---------------------------------------------------------------- |
-| `deno task dev`       | Install dependencies and start local server                       |
+| `deno task dev`       | Install and start local server (http://localhost:4321/)           |
 | `deno task build`     | Build for production (to `./dist/`)                               |
 | `deno task preview`   | Preview production build locally                                  |
 | `deno task format`    | Format code with Biome                                            |
