@@ -14,15 +14,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Install, build, and upload site
-        uses: withastro/action@v3
-        # Uncomment and set these if you need a specific Node version or package manager:
-        # with:
-        #   node-version: 20
-        #   package-manager: npm
+      - uses: actions/checkout@v4
+      - uses: withastro/action@v3
+        with:
+          node-version: latest
+          package-manager: npm
 
   deploy:
     needs: build
