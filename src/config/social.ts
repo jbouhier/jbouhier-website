@@ -34,7 +34,7 @@ export const socialLinks = [
   {
     platform: 'linkedin',
     title: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/jb-notacat',
+    url: 'https://www.linkedin.com/in/jbbouhier',
     icon: 'linkedin',
     color: iconColor,
   },
