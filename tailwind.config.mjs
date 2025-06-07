@@ -6,9 +6,6 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
-      backgroundColor: {
-        'custom': '#FAD1C4',
-      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
@@ -50,8 +47,8 @@ export default {
         },
       },
       backgroundImage: {
-        'pink-gradient': 'linear-gradient(to bottom, #FAD1C4, #F8B8A8, #FAD1C4)',
-        'pink-gradient-dark': 'linear-gradient(to bottom, #D9A89A, #D18F7F, #D9A89A)',
+        'pink-gradient': 'linear-gradient(to bottom, var(--primary-50), var(--primary-100), var(--primary-50))',
+        'pink-gradient-dark': 'linear-gradient(to bottom, var(--primary-900), var(--primary-800), var(--primary-900))',
       },
         // Brand colors
         brand: {

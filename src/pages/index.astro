@@ -1,13 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import SocialIcons from '@/components/SocialIcons.astro';
-import { socialLinks } from '@/config/social';
-
-const title = "JB";
-const subtitle = "Building bootstrapped SaaS products";
-
-// TODO: Add products when ready
-const products: any[] = [];
+import { author, products, socialLinks } from '@/config';
 ---
 
 <Layout>
@@ -27,11 +21,12 @@ const products: any[] = [];
                 height="192"
               />
             </div>
-            <h1 class="text-3xl lg:text-5xl font-bold mb-4 lg:mb-4 leading-tight text-center">
-              <span class="text-gray-900">I am</span> <span class="text-primary-900">{title}</span>
+            <h1 class="text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 leading-tight text-center">
+              <span class="text-primary-800 dark:text-primary-400">{author.firstName} </span>
+              <span class="text-gray-800 dark:text-gray-200">{author.lastName}</span>
             </h1>
             <p class="text-base lg:text-lg text-primary-500 mb-6 lg:mb-8 leading-relaxed text-center">
-              {subtitle}
+              {author.subtitle}
             </p>
           </div>
         </div>
