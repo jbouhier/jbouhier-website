@@ -22,6 +22,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup
+        run: |
+          # Create .nojekyll files
+          touch .nojekyll
+          mkdir -p dist
+          touch dist/.nojekyll
+          
+          # Create empty .nojekyll files in all subdirectories
+          find src -type d -exec touch {}/.nojekyll \;
+          
+          # Create a simple 404 page
+          echo "<!DOCTYPE html><html><head><meta http-equiv=\"refresh\" content=\"0; url=./index.html\"></head><body>Redirecting...</body></html>" > dist/404.html
+          
+          # Create a _config.yml to explicitly disable Jekyll
+          echo "include: []" > _config.yml
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -36,15 +52,24 @@ jobs:
         run: |
           echo "GITHUB_PAGES=true" >> $GITHUB_ENV
           npm run build
-          # Create .nojekyll file to prevent Jekyll processing
-          touch ./dist/.nojekyll
+          
+          # Verify dist directory structure
+          ls -la dist/
+          
+          # Ensure .nojekyll exists in dist
+          touch dist/.nojekyll
+          
+          # Remove any .md files that might be processed by Jekyll
+          find dist -name '*.md' -delete
         env:
           GITHUB_PAGES: 'true'
+          NODE_ENV: 'production'
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
+          retention-days: 1
 
   deploy:
     environment:
@@ -56,3 +81,8 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Show deployment status
+        run: |
+          echo "Deployment status: ${{ steps.deployment.outcome }}"
+          echo "View your site at: ${{ steps.deployment.outputs.page_url }}"
