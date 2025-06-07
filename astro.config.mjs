@@ -5,7 +5,7 @@ import react from '@astrojs/react';
 
 export default defineConfig({
   output: 'static',
-  site: 'https://jbouhier.com',
+  site: 'https://www.jbouhier.com',
   integrations: [
     tailwind(), 
     sitemap(), 
