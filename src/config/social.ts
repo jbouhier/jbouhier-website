@@ -1,7 +1,3 @@
-import { FaTwitter, FaYoutube, FaLinkedin } from "react-icons/fa";
-import { FaFeather } from "react-icons/fa6";
-import type { IconType } from "react-icons";
-
 export type SocialPlatform = 'x' | 'bluesky' | 'youtube' | 'linkedin';
 
 export interface SocialLink {
@@ -11,34 +7,35 @@ export interface SocialLink {
   icon: string;
 }
 
-// Social links with string icon names for Astro components
+const iconColor = '#1f2937';
+
 export const socialLinks = [
   {
     platform: 'x',
     title: 'X',
     url: 'https://x.com/jb_notacat',
     icon: 'x',
-    color: '#1f2937', // surface.dark from Tailwind config
+    color: iconColor,
   },
   {
     platform: 'bluesky',
     title: 'Bluesky',
     url: 'https://bsky.app/profile/jb-notacat.bsky.social',
     icon: 'bluesky',
-    color: '#1f2937', // surface.dark from Tailwind config
+    color: iconColor,
   },
   {
     platform: 'youtube',
     title: 'YouTube',
     url: 'https://www.youtube.com/@jb-notacat',
     icon: 'youtube',
-    color: '#1f2937', // surface.dark from Tailwind config
+    color: iconColor,
   },
   {
     platform: 'linkedin',
     title: 'LinkedIn',
     url: 'https://www.linkedin.com/in/jb-notacat',
     icon: 'linkedin',
-    color: '#1f2937', // surface.dark from Tailwind config
+    color: iconColor,
   },
 ] as const;
