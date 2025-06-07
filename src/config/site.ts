@@ -1,5 +1,5 @@
 export const siteConfig = {
-  title: "JB | Building Bootstrapped SaaS Products",
+  title: "JB | Builds startups",
   description: "I build and grow bootstrapped SaaS products. Follow my journey as I share insights and lessons learned.",
   baseUrl: process.env.SITE_URL || 'https://jbouhier.com',
   

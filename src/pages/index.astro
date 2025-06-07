@@ -2,6 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import SocialIcons from '@/components/SocialIcons.astro';
 import { author, products, socialLinks } from '@/config';
+import ProductCard from '@/components/ProductCard.astro';
 ---
 
 <Layout>
@@ -22,8 +23,7 @@ import { author, products, socialLinks } from '@/config';
               />
             </div>
             <h1 class="text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 leading-tight text-center">
-              <span class="text-primary-800 dark:text-primary-400">{author.firstName} </span>
-              <span class="text-gray-800 dark:text-gray-200">{author.lastName}</span>
+              <span class="text-primary-800 dark:text-primary-400">{author.firstName} {author.lastName}</span>
             </h1>
             <p class="text-base lg:text-lg text-primary-500 mb-6 lg:mb-8 leading-relaxed text-center">
               {author.subtitle}
@@ -40,27 +40,10 @@ import { author, products, socialLinks } from '@/config';
     <!-- Products -->
     <div class="w-full lg:w-[45%] lg:min-w-[300px] max-w-3xl lg:max-w-xl mx-auto lg:mx-0 p-6 lg:p-24 flex flex-col">
       <div class="w-full">
-        <div class="mb-12">
-          <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">My Work</h2>
-          <p class="text-gray-600 dark:text-gray-300">
-            I'm currently working on some exciting projects. Check back soon for updates!
-          </p>
-        </div>
         {products.length > 0 && (
           <div class="space-y-12 lg:max-w-xl lg:mx-auto">
             {products.map((product) => (
-              <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
-                <h3 class="text-xl font-semibold text-gray-800 dark:text-white">{product.title}</h3>
-                <p class="mt-2 text-gray-600 dark:text-gray-300">{product.description}</p>
-                <a 
-                  href={product.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  class="mt-4 inline-block text-primary-600 dark:text-primary-400 hover:underline"
-                >
-                  Learn more →
-                </a>
-              </div>
+            <ProductCard product={product} />
             ))}
           </div>
         )}
