@@ -5,7 +5,6 @@ import { FaFeather } from "react-icons/fa6"
 export interface SiteConfig {
   name: string;
   description: string;
-  email: string;
   baseUrl: string;
 }
 
@@ -57,10 +56,9 @@ export const socialLinks: SocialLink[] = [
 export { iconMap };
 
 export const siteConfig: SiteConfig = {
-  name: 'JB | Not a cat',
+  name: 'JB Bouhier',
   description: 'Bootstrapping SaaS products',
-  email: 'hello@notacatventures.com',
-  baseUrl: 'https://notacatventures.com'
+  baseUrl: 'https://jbouhier.com'
 };
 
 export const products: Product[] = [

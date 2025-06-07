@@ -1,11 +1,10 @@
 ---
-// Import components and config
 import ProductCard from '@/components/ProductCard.astro';
 import Layout from '@/layouts/Layout.astro';
 import { products, socialLinks } from '@/site';
 import SocialIcons from '@/components/SocialIcons.astro';
 
-const title = "Not a cat"
+const title = "JB"
 const subtitle = "Building bootstrapped SaaS products"
 ---
 
@@ -17,7 +16,15 @@ const subtitle = "Building bootstrapped SaaS products"
         <!-- Logo & Title -->
         <div class="mb-8">
           <div class="relative">
-            <img src="/logo.png" alt="Logo" class="w-auto h-16 mb-4 mx-auto" />
+            <div class="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-lg">
+              <img 
+                src="/profile.png" 
+                alt="Profile picture" 
+                class="w-full h-full object-cover object-center" 
+                width="192"
+                height="192"
+              />
+            </div>
             <h1 class="text-3xl lg:text-5xl font-bold mb-4 lg:mb-4 leading-tight text-center">
               <span class="text-gray-900">I am</span> <span class="text-primary-900">{title}</span>
             </h1>
