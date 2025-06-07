@@ -1,7 +1,6 @@
 {
-  "name": "not-a-cat",
-  "description": "Not a cat website",
-  "author": "JB Bouhier <jb.bouhier@gmail.com>",
+  "name": "jbouhier-website",
+  "description": "jbouhier.com website",
   "type": "module",
   "private": true,
   "scripts": {

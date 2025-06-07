@@ -7,7 +7,11 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  site: 'https://notacatventures.com',
+  // For GitHub Pages
+  base: process.env.GITHUB_PAGES === 'true' 
+    ? `/${process.env.GITHUB_REPOSITORY?.split('/')[1] || ''}`
+    : '/',
+  site: 'https://jbouhier.com',
   integrations: [
     tailwind(), 
     sitemap(), 

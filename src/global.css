@@ -2,26 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom styles */
+@layer base {
+  :root {
+    --color-primary-50: 255 240 245;
+    --color-primary-100: 255 228 233;
+    --color-primary-200: 255 217 228;
+    --color-primary-300: 255 196 217;
+    --color-primary-400: 255 159 191;
+    --color-primary-500: 255 117 163;
+    --color-primary-600: 255 75 135;
+    --color-primary-700: 255 33 107;
+    --color-primary-800: 255 0 79;
+    --color-primary-900: 204 0 63;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+}
+
 @layer components {
   .btn {
     @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 ease-in-out;
   }
   
   .btn-primary {
-    @apply bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:shadow-lg hover:-translate-y-0.5 hover:from-purple-700 hover:to-indigo-700;
+    @apply bg-gradient-to-r from-primary-600 to-primary-800 text-white 
+           hover:shadow-lg hover:-translate-y-0.5 hover:from-primary-700 hover:to-primary-900
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-opacity-50;
   }
   
   .btn-outline {
-    @apply border-2 border-gray-200 text-gray-800 hover:border-purple-500 hover:text-purple-600 hover:bg-gray-50 transition-colors;
+    @apply border-2 border-primary-200 text-primary-800 
+           hover:border-primary-400 hover:text-primary-900 hover:bg-primary-50 
+           dark:border-primary-700 dark:text-primary-100 dark:hover:bg-primary-900/20
+           transition-colors;
   }
   
   .section-title {
-    @apply text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight;
+    @apply text-3xl md:text-4xl font-bold text-primary-900 dark:text-white mb-4 tracking-tight;
   }
   
   .section-subtitle {
-    @apply text-lg text-gray-600 max-w-2xl mx-auto mb-12 leading-relaxed;
+    @apply text-lg text-primary-700/90 dark:text-primary-200/80 max-w-2xl mx-auto mb-12 leading-relaxed;
   }
   
   .container {
@@ -30,7 +54,20 @@
   
   /* Animations */
   .animate-float {
-    animation: float 6s ease-in-out infinite;
+    @apply animate-[float_6s_ease-in-out_infinite];
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-primary-50 dark:bg-primary-900/50;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-300 dark:bg-primary-600 rounded-full hover:bg-primary-400 dark:hover:bg-primary-500;
   }
   
   .animate-fade-in {
