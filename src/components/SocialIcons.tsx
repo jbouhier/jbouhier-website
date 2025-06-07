@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FC } from 'react';
 import { FaXTwitter } from 'react-icons/fa6';
 import { FaYoutube, FaLinkedin } from 'react-icons/fa';
 import { FaBluesky } from 'react-icons/fa6';
@@ -30,7 +30,7 @@ interface SocialIconsProps {
   icons: SocialIcon[];
 }
 
-export const SocialIcons: React.FC<SocialIconsProps> = ({ icons }) => {
+export const SocialIcons: FC<SocialIconsProps> = ({ icons }) => {
   return (
     <div className="flex gap-6">
       {icons.map(({ name, href, icon, color, title }) => {
@@ -49,7 +49,7 @@ export const SocialIcons: React.FC<SocialIconsProps> = ({ icons }) => {
           >
             <span className="sr-only">{title || name}</span>
             <IconComponent 
-              className="w-7 h-7 transition-colors duration-300"
+              className={`transition-colors duration-300 ${icon === 'youtube' ? 'w-9 h-9' : 'w-7 h-7'}`}
               style={{ 
                 color: color,
                 transition: 'color 0.3s ease-in-out',

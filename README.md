@@ -9,7 +9,8 @@ Personal website
 - [VSCode](https://code.visualstudio.com/) (or Windsurf)
 - [VSCode Deno extension](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno)
 - [VSCode Astro extension](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode)
-- [VSCode Biome extension]
+- [VSCode Tailwind CSS extension](https://marketplace.windsurf.com/extension/bradlc/vscode-tailwindcss)
+- [VSCode Biome extension](https://marketplace.visualstudio.com/items?itemName=biomejs.biome)
 
 ## Commands
 
@@ -25,3 +26,5 @@ Personal website
 
 - [Deno](https://deno.com/)
 - [Astro docs](https://astro.build)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Biome](https://biomejs.dev/)
