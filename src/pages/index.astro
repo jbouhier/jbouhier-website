@@ -1,7 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import SocialIcons from '@/components/SocialIcons.astro';
-import { author, products, socialLinks } from '@/config';
+import { SocialIcons } from '@/components/SocialIcons';
+import { author, products } from '@/config';
 import ProductCard from '@/components/ProductCard.astro';
 ---
 
@@ -34,7 +34,7 @@ import ProductCard from '@/components/ProductCard.astro';
         </div>
         <!-- Social Media Links -->
         <div class="space-y-5 lg:space-y-6">
-          <SocialIcons links={socialLinks} />
+          <SocialIcons />
         </div>
       </div>
     </div>

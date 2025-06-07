@@ -1,7 +1,7 @@
-import type { FC } from 'react';
 import { FaXTwitter } from 'react-icons/fa6';
 import { FaYoutube, FaLinkedin } from 'react-icons/fa';
 import { FaBluesky } from 'react-icons/fa6';
+import { socialLinks } from '@/config';
 
 export type SocialIcon = {
   name: string;
@@ -18,22 +18,18 @@ export const iconMap = {
   'linkedin': FaLinkedin,
 } as const;
 
-// Define hover colors for each icon
-const iconHoverColors = {
-  'x': '#1DA1F2', // Twitter/X blue
-  'bluesky': '#4A90E2', // Bluesky blue
-  'youtube': '#FF0000', // YouTube red
-  'linkedin': '#0077B5', // LinkedIn blue
-} as const;
+const socialIcons: SocialIcon[] = socialLinks.map(link => ({
+  name: link.title,
+  href: link.url,
+  icon: link.icon as 'x' | 'bluesky' | 'youtube' | 'linkedin',
+  color: link.color,
+  title: link.title
+}));
 
-interface SocialIconsProps {
-  icons: SocialIcon[];
-}
-
-export const SocialIcons: FC<SocialIconsProps> = ({ icons }) => {
+export const SocialIcons = () => {
   return (
-    <div className="flex gap-6">
-      {icons.map(({ name, href, icon, color, title }) => {
+    <div className="flex gap-6 justify-center">
+      {socialIcons.map(({ name, href, icon, color, title }) => {
         const IconComponent = iconMap[icon];
         if (!IconComponent) return null;
         
@@ -43,17 +39,24 @@ export const SocialIcons: FC<SocialIconsProps> = ({ icons }) => {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className={`transition-all duration-300 ease-in-out flex items-center justify-center w-12 h-12 rounded-full hover:scale-110 hover:shadow-lg hover:ring-2 hover:ring-offset-2 hover:ring-primary-500 ${color} md:hover:bg-opacity-20 md:hover:scale-110 md:active:scale-95`}
+            className={`group relative overflow-hidden transition-all duration-200 ease-out
+              flex items-center justify-center w-12 h-12 rounded-full
+              bg-gradient-to-br from-primary-50/30 to-primary-100/20
+              hover:from-primary-100/50 hover:to-primary-200/40
+              hover:scale-105 hover:shadow-md hover:ring-2 hover:ring-offset-2 hover:ring-primary-300/50
+              text-primary-700 hover:text-primary-600 dark:text-primary-300 dark:hover:text-primary-200
+              ${color} active:scale-95`}
             aria-label={title || name}
             title={title}
           >
             <span className="sr-only">{title || name}</span>
             <IconComponent 
-              className={`transition-colors duration-300 ${icon === 'youtube' ? 'w-9 h-9' : 'w-7 h-7'}`}
+              className={`${icon === 'youtube' ? 'w-9 h-9' : 'w-7 h-7'}`}
               style={{ 
-                color: color,
-                transition: 'color 0.3s ease-in-out',
-                backgroundColor: 'transparent'
+                color: 'currentColor',
+                transition: 'color 0.2s ease-out, transform 0.2s ease-out',
+                backgroundColor: 'transparent',
+                willChange: 'transform, color'
               }}
             />
           </a>

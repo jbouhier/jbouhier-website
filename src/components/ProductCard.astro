@@ -7,7 +7,7 @@ const { product } = Astro.props;
     href={product.url} 
     target="_blank" 
     rel="noopener noreferrer"
-    class="block p-6 rounded-2xl bg-white border border-primary-200 shadow-sm hover:shadow-product-hover transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] overflow-hidden"
+    class="block p-6 rounded-2xl bg-white border border-primary-200/80 shadow-sm hover:shadow-md hover:shadow-primary-100/50 transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] overflow-hidden dark:bg-primary-800/30 dark:border-primary-700/50"
     aria-label={`View ${product.title}`}
   >
     <div class="flex flex-col">
@@ -23,7 +23,7 @@ const { product } = Astro.props;
         
         <div class="flex-1 min-w-0">
           <div class="flex items-center justify-between gap-2">
-            <h3 class="text-xl font-bold text-primary-900 hover:text-primary-600 transition-colors truncate">
+            <h3 class="text-xl font-bold text-primary-800 hover:text-primary-600 transition-colors truncate dark:text-primary-100 dark:hover:text-primary-300">
               {product.title}
             </h3>
           </div>
@@ -31,7 +31,7 @@ const { product } = Astro.props;
       </div>
       
       {/* Description */}
-      <p class="text-primary-500 text-sm leading-relaxed hover:text-primary-600 transition-colors">
+      <p class="text-primary-700/90 text-sm leading-relaxed hover:text-primary-600 transition-colors dark:text-primary-200/80 dark:hover:text-primary-300">
         {product.description}
       </p>
     </div>

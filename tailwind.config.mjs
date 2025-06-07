@@ -47,48 +47,24 @@ export default {
         },
       },
       backgroundImage: {
-        'pink-gradient': 'linear-gradient(to bottom, var(--primary-50), var(--primary-100), var(--primary-50))',
-        'pink-gradient-dark': 'linear-gradient(to bottom, var(--primary-900), var(--primary-800), var(--primary-900))',
+        'pink-gradient': 'linear-gradient(to bottom, var(--primary-50), var(--primary-100))',
+        'pink-gradient-dark': 'linear-gradient(to bottom, var(--primary-900), var(--primary-800))',
       },
-        // Brand colors
-        brand: {
-          50: '#f8fafc',
-          100: '#f0f4fc',
-          200: '#e0e7ff',
-          300: '#c7d2fe',
-          400: '#a5b4fc',
-          500: '#8b5cf6',
-          600: '#7c3aed',
-          700: '#6d28d9',
-          800: '#5b21b6',
-          900: '#4c1d95',
-        },
-        // Surface colors for cards and containers
-        surface: {
-          DEFAULT: '#ffffff',
-          dark: '#1f2937',
-        },
-        // Border colors
-        border: {
-          DEFAULT: '#e5e7eb',
-          dark: '#374151',
-        },
-        // Text colors
-        text: {
-          primary: '#1f2937',
-          secondary: '#4b5563',
-          light: '#f3f4f6',
-        },
-        // Gradient colors
-        gradient: {
-          start: '#8b5cf6',
-          end: '#7c3aed',
-        },
-        // Interactive states
-        hover: {
-          primary: '#7c3aed',
-          secondary: '#6d28d9',
-        },
+      // Surface colors for cards and containers
+      surface: {
+        DEFAULT: '#ffffff',
+        dark: '#1f2937',
+      },
+      // Border colors
+      border: {
+        DEFAULT: '#e5e7eb',
+        dark: '#374151',
+      },
+      // Text colors
+      text: {
+        primary: '#1f2937',
+        secondary: '#4b5563',
+        light: '#f3f4f6',
       },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
@@ -158,4 +134,5 @@ export default {
         },
       },
     },
+  },
 };
