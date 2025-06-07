@@ -1,0 +1,84 @@
+---
+const { product } = Astro.props;
+---
+
+<article>
+  <a 
+    href={product.url} 
+    target="_blank" 
+    rel="noopener noreferrer"
+    class="block p-6 rounded-2xl bg-white border border-primary-200 shadow-sm hover:shadow-product-hover transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] overflow-hidden"
+    aria-label={`View ${product.title}`}
+  >
+    <div class="flex flex-col">
+      {/* Header with icon and title */}
+      <div class="flex items-center gap-4 mb-4">
+          <div class="flex-shrink-0">
+            <img 
+              src={product.image} 
+              alt={product.title} 
+              class="w-8 h-8 object-contain rounded-lg transform hover:scale-125 transition-transform duration-300"
+            />
+          </div>
+        
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center justify-between gap-2">
+            <h3 class="text-xl font-bold text-primary-900 hover:text-primary-600 transition-colors truncate">
+              {product.title}
+            </h3>
+          </div>
+        </div>
+      </div>
+      
+      {/* Description */}
+      <p class="text-primary-500 text-sm leading-relaxed hover:text-primary-600 transition-colors">
+        {product.description}
+      </p>
+    </div>
+  </a>
+</article>
+
+<style>
+  /* Card hover effects */
+  article {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  article:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Image hover effects */
+  article img {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  article:hover img {
+    transform: scale(1.25) rotate(-5deg);
+  }
+  
+  /* Gradient overlay effect */
+  article::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(168, 85, 247, 0.08) 100%);
+    border-radius: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    pointer-events: none;
+  }
+  
+  article:hover::before {
+    opacity: 1;
+  }
+  
+  /* Ensure hover shadow matches rounded corners */
+  a:hover {
+    border-radius: 0.75rem;
+  }
+</style>

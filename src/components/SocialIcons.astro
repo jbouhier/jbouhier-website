@@ -1,0 +1,33 @@
+---
+import { SocialIcons as ReactSocialIcons, type SocialIcon } from './SocialIcons.tsx';
+
+interface Props {
+  links: Array<{
+    title: string;
+    url: string;
+    icon: string;
+  }>
+}
+
+const props = Astro.props as Props;
+
+// Convert Astro icon format to React icon format
+const socialIcons: SocialIcon[] = props.links.map(link => {
+  const icon = link.icon.replace('Fa', '').toLowerCase();
+  const iconType = icon === 'twitter' ? 'x' : 
+                  icon === 'feather' ? 'bluesky' : 
+                  icon === 'youtube' ? 'youtube' : 
+                  icon === 'linkedin' ? 'linkedin' : icon;
+  return {
+    name: link.title,
+    href: link.url,
+    icon: iconType as 'x' | 'bluesky' | 'youtube' | 'linkedin',
+    color: '#000000',
+    title: link.title
+  };
+});
+---
+
+<div class="flex flex-col items-center space-y-4">
+  <ReactSocialIcons icons={socialIcons} />
+</div>

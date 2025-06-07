@@ -1,0 +1,205 @@
+---
+// Import components and config
+import ProductCard from '@/components/ProductCard.astro';
+import Layout from '@/layouts/Layout.astro';
+import { products, socialLinks } from '@/site';
+import SocialIcons from '@/components/SocialIcons.astro';
+
+const title = "Not a cat"
+const subtitle = "Building bootstrapped SaaS products"
+---
+
+<Layout>
+  <main class="flex-1 flex flex-col lg:flex-row lg:items-center lg:justify-center gap-6 lg:gap-20 bg-gradient-to-b from-primary-50 via-primary-100 to-primary-50 dark:from-primary-900 dark:via-primary-800 dark:to-primary-900 pt-6 px-4 lg:pt-16 h-full min-h-screen">
+    <!-- Company Info -->
+    <div class="w-full lg:w-[45%] lg:min-w-[300px] max-w-3xl lg:max-w-xl mx-auto lg:mx-0 p-6 lg:p-24 flex flex-col">
+      <div class="w-full">
+        <!-- Logo & Title -->
+        <div class="mb-8">
+          <div class="relative">
+            <img src="/logo.png" alt="Logo" class="w-auto h-16 mb-4 mx-auto" />
+            <h1 class="text-3xl lg:text-5xl font-bold mb-4 lg:mb-4 leading-tight text-center">
+              <span class="text-gray-900">I am</span> <span class="text-primary-900">{title}</span>
+            </h1>
+            <p class="text-base lg:text-lg text-primary-500 mb-6 lg:mb-8 leading-relaxed text-center">
+              {subtitle}
+            </p>
+          </div>
+        </div>
+        <!-- Social Media Links -->
+        <div class="space-y-4 lg:space-y-6">
+          <SocialIcons links={socialLinks} />
+        </div>
+      </div>
+    </div>
+
+    <!-- Products -->
+    <div class="w-full lg:w-[45%] lg:min-w-[300px] max-w-3xl lg:max-w-xl mx-auto lg:mx-0 p-6 lg:p-24 flex flex-col">
+      <div class="w-full">
+        <div class="mb-12">
+        </div>
+        <div class="space-y-12 lg:max-w-xl lg:mx-auto">
+          {products.map((product) => 
+            <ProductCard product={product} />
+          )}
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  /* Base styles */
+  :root {
+    --primary: #8b5cf6;
+    --primary-dark: #7c3aed;
+    --background: #ffffff;
+    --surface: #f9fafb;
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --border: #e5e7eb;
+  }
+  
+  /* Smooth scrolling and full height */
+  html {
+    scroll-behavior: smooth;
+    height: 100%;
+    background-color: var(--background);
+  }
+  
+  body, #root, .astro-root, main {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-primary);
+    line-height: 1.6;
+  }
+  
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 800;
+    line-height: 1.2;
+    margin-top: 0;
+    letter-spacing: -0.02em;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--surface);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #d1d5db;
+  }
+  
+  /* Responsive behavior */
+  @media (max-width: 767px) {
+    main {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .md:w-[40%] {
+      width: 100%;
+    }
+    
+    .md:p-12, .md:p-16 {
+      padding: 1rem;
+    }
+  }
+  
+  /* Dark mode */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #111827;
+      --surface: #1f2937;
+      --text-primary: #f9fafb;
+      --text-secondary: #d1d5db;
+      --border: #374151;
+    }
+    
+    .glass {
+      background-color: rgba(17, 24, 39, 0.8);
+      border-color: rgba(55, 65, 81, 0.3);
+    }
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 767px) {
+    .md\:w-1/2 {
+      width: 100%;
+      min-height: auto;
+    }
+    
+    .md\:min-h-screen {
+      min-height: auto;
+      padding: 3rem 1.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .md\:w-1/2 {
+      width: 50%;
+    }
+    
+    .md\:min-h-screen {
+      min-height: 100vh;
+    }
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  /* Custom styles */
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  }
+  
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>
+
+<script>
+  // Intersection Observer for fade-in animations
+  document.addEventListener('DOMContentLoaded', () => {
+    const fadeElements = document.querySelectorAll<HTMLElement>('.fade-in');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+    
+    fadeElements.forEach(element => {
+      observer.observe(element);
+    });
+  });
+</script>

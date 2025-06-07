@@ -1,0 +1,49 @@
+---
+// Import global styles
+import '../global.css';
+import Analytics from '@vercel/analytics/astro'
+
+// Import site config
+import { siteConfig } from '../site';
+
+// Get the current page title
+const title = Astro.props.title || siteConfig.name;
+const description = Astro.props.description || siteConfig.description;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site || 'https://notacativentures.com').toString()} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/social-preview.jpg" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/social-preview.jpg" />
+    
+    <title>{title}</title>
+    
+    <!-- Preload Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <Analytics />
+  </head>
+  
+  <body class="min-h-screen bg-primary-100 text-gray-900 antialiased">
+    <slot />
+  </body>
+</html>
