@@ -1,41 +1,37 @@
-export type SocialPlatform = 'x' | 'bluesky' | 'youtube' | 'linkedin';
+import type { IconType } from "react-icons";
+import { FaXTwitter, FaYoutube, FaLinkedin } from "react-icons/fa6";
+import { FaBluesky } from "react-icons/fa6";
 
 export interface SocialLink {
-  platform: SocialPlatform;
-  title: string;
-  url: string;
-  icon: string;
+  name: string;
+  href: string;
+  Icon: IconType;
+  className?: string;
 }
 
-const iconColor = '#1f2937';
-
-export const socialLinks = [
+export const socialLinks: SocialLink[] = [
   {
-    platform: 'x',
-    title: 'X',
-    url: 'https://x.com/jb_notacat',
-    icon: 'x',
-    color: iconColor,
+    name: 'X',
+    href: 'https://x.com/jb_notacat',
+    Icon: FaXTwitter,
+    className: 'w-7 h-7',
   },
   {
-    platform: 'bluesky',
-    title: 'Bluesky',
-    url: 'https://bsky.app/profile/jb-notacat.bsky.social',
-    icon: 'bluesky',
-    color: iconColor,
+    name: 'Bluesky',
+    href: 'https://bsky.app/profile/jb-notacat.bsky.social',
+    Icon: FaBluesky,
+    className: 'w-7 h-7',
   },
   {
-    platform: 'youtube',
-    title: 'YouTube',
-    url: 'https://www.youtube.com/@jb-notacat',
-    icon: 'youtube',
-    color: iconColor,
+    name: 'YouTube',
+    href: 'https://www.youtube.com/@jb-notacat',
+    Icon: FaYoutube,
+    className: 'w-9 h-9',
   },
   {
-    platform: 'linkedin',
-    title: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/jbbouhier',
-    icon: 'linkedin',
-    color: iconColor,
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/jbbouhier',
+    Icon: FaLinkedin,
+    className: 'w-7 h-7',
   },
 ] as const;
