@@ -12,12 +12,15 @@ export const SocialIcons = () => {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className={`group relative overflow-hidden transition-all duration-200 ease-out
-              flex items-center justify-center w-12 h-12 rounded-full
-              bg-gradient-to-br from-surface-50 to-surface-100 dark:from-surface-800/50 dark:to-surface-900/50
-              hover:from-primary-100/50 hover:to-primary-200/40 dark:hover:from-primary-900/50 dark:hover:to-primary-800/40
-              hover:scale-105 hover:shadow-md hover:ring-2 hover:ring-offset-2 hover:ring-primary-300/50 dark:hover:ring-primary-700/50
-              text-surface-600 dark:text-surface-300 hover:text-primary-600 dark:hover:text-primary-300
+            className={`group relative overflow-hidden transition-all duration-300 ease-out
+              flex items-center justify-center w-14 h-14 rounded-2xl
+              bg-white/10 dark:bg-black/20 backdrop-blur-lg
+              border border-white/20 dark:border-white/10
+              shadow-lg shadow-black/10 dark:shadow-black/30
+              hover:bg-white/20 dark:hover:bg-black/30
+              hover:shadow-xl hover:shadow-primary-400/10 dark:hover:shadow-primary-700/20
+              hover:scale-105 hover:ring-2 hover:ring-offset-2 hover:ring-white/20
+              text-surface-600 dark:text-surface-200 hover:text-primary-600 dark:hover:text-primary-300
               active:scale-95`}
             aria-label={name}
             title={name}
@@ -27,9 +30,10 @@ export const SocialIcons = () => {
               className={className}
               style={{ 
                 color: 'currentColor',
-                transition: 'color 0.2s ease-out, transform 0.2s ease-out',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 backgroundColor: 'transparent',
-                willChange: 'transform, color'
+                willChange: 'transform, color, filter',
+                filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))',
               }}
             />
           </a>

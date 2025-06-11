@@ -2,28 +2,33 @@
 const { product } = Astro.props;
 ---
 
-<article>
+<article class="group relative">
   <a 
     href={product.url} 
     target="_blank" 
     rel="noopener noreferrer"
-    class="block p-6 rounded-2xl bg-white border border-primary-200/80 shadow-sm hover:shadow-md hover:shadow-primary-100/50 transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] overflow-hidden dark:bg-primary-800/30 dark:border-primary-700/50"
+    class="block p-6 rounded-2xl backdrop-blur-lg transition-all duration-300 transform overflow-hidden
+           bg-white/40 dark:bg-black/30 border border-white/30 dark:border-white/10
+           shadow-lg shadow-black/5 dark:shadow-black/30
+           hover:bg-white/60 dark:hover:bg-black/40
+           hover:shadow-xl hover:shadow-primary-400/10 dark:hover:shadow-primary-700/20
+           hover:-translate-y-1 hover:scale-[1.02]"
     aria-label={`View ${product.title}`}
   >
-    <div class="flex flex-col">
+    <div class="relative z-10 flex flex-col h-full">
       {/* Header with icon and title */}
       <div class="flex items-center gap-4 mb-4">
-          <div class="flex-shrink-0">
-            <img 
-              src={product.image} 
-              alt={product.title} 
-              class="w-8 h-8 object-contain rounded-lg transform hover:scale-125 transition-transform duration-300"
-            />
-          </div>
-        
+        <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-xl backdrop-blur-sm bg-white/30 dark:bg-black/20 border border-white/30 dark:border-white/10">
+          <img 
+            src={product.image} 
+            alt={product.title} 
+            class="w-6 h-6 object-contain transition-all duration-300 group-hover:scale-125 group-hover:rotate-6"
+          />
+        </div>
+      
         <div class="flex-1 min-w-0">
           <div class="flex items-center justify-between gap-2">
-            <h3 class="text-xl font-bold text-primary-800 hover:text-primary-600 transition-colors truncate dark:text-primary-100 dark:hover:text-primary-300">
+            <h3 class="text-xl font-bold text-primary-800 dark:text-primary-100 transition-colors truncate group-hover:text-primary-600 dark:group-hover:text-primary-300">
               {product.title}
             </h3>
           </div>
@@ -31,7 +36,7 @@ const { product } = Astro.props;
       </div>
       
       {/* Description */}
-      <p class="text-primary-700/90 text-sm leading-relaxed hover:text-primary-600 transition-colors dark:text-primary-200/80 dark:hover:text-primary-300">
+      <p class="text-primary-700/90 dark:text-primary-200/80 text-sm leading-relaxed transition-colors group-hover:text-primary-600 dark:group-hover:text-primary-300">
         {product.description}
       </p>
     </div>
@@ -39,46 +44,35 @@ const { product } = Astro.props;
 </article>
 
 <style>
-  /* Card hover effects */
-  article {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  article:hover {
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Image hover effects */
-  article img {
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  article:hover img {
-    transform: scale(1.25) rotate(-5deg);
-  }
-  
-  /* Gradient overlay effect */
+  /* Glassmorphism effect enhancement */
   article::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(168, 85, 247, 0.08) 100%);
+    inset: 0;
+    background: linear-gradient(
+      135deg, 
+      rgba(255, 255, 255, 0.05) 0%, 
+      rgba(255, 255, 255, 0.1) 100%
+    );
     border-radius: 1rem;
-    opacity: 0;
+    z-index: 1;
+    opacity: 1;
     transition: opacity 0.3s ease-out;
     pointer-events: none;
   }
   
   article:hover::before {
-    opacity: 1;
+    opacity: 0.7;
   }
   
-  /* Ensure hover shadow matches rounded corners */
-  a:hover {
-    border-radius: 0.75rem;
+  /* Subtle floating effect on hover */
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  article:hover {
+    animation: float 3s ease-in-out infinite;
   }
 </style>
