@@ -1,14 +1,14 @@
 ---
 // Import global styles
-import '../global.css';
+import '@/global.css';
 import Analytics from '@vercel/analytics/astro'
 
 // Import site config
-import { siteConfig } from '../config/site';
+import { site } from '@/config';
 
 // Get the current page title
-const title = Astro.props.title || siteConfig.title;
-const description = Astro.props.description || siteConfig.description;
+const title = Astro.props.title || site.title;
+const description = Astro.props.description || site.description;
 ---
 
 <!doctype html>
@@ -22,7 +22,7 @@ const description = Astro.props.description || siteConfig.description;
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site || 'https://notacativentures.com').toString()} />
+    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site || site.url).toString()} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content="/social-preview.jpg" />
