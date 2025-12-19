@@ -18,7 +18,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: 'Bluesky',
-    href: 'https://bsky.app/profile/jb-notacat.bsky.social',
+    href: 'https://bsky.app/profile/jbouhier.com',
     Icon: FaBluesky,
     className: 'w-7 h-7',
   },
