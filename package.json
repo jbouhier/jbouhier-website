@@ -1,6 +1,7 @@
 {
-  "name": "jbouhier-website",
-  "description": "jbouhier.com website",
+  "name": "not-a-cat",
+  "description": "Not a cat website",
+  "author": "JB Bouhier <jb@notacatventures.com>",
   "type": "module",
   "private": true,
   "scripts": {
@@ -10,25 +11,25 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^4.3.0",
-    "@astrojs/ts-plugin": "^1.10.4",
-    "@vercel/analytics": "^1.5.0",
-    "astro": "^5.8.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/ts-plugin": "^1.10.6",
+    "@vercel/analytics": "^1.6.1",
+    "astro": "^5.16.6",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "react-icons": "^5.5.0"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "^3.4.0",
+    "@astrojs/sitemap": "^3.6.0",
     "@astrojs/tailwind": "^6.0.2",
-    "@tailwindcss/forms": "^0.5.10",
-    "@tailwindcss/typography": "^0.5.16",
-    "@types/node": "^22.15.23",
-    "@types/react": "^19.1.6",
-    "@types/react-dom": "^19.1.5",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/node": "^25.0.3",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
     "postcss-nested": "^7.0.2",
-    "tailwind-merge": "^3.3.0",
-    "tailwindcss": "^3.4.17",
-    "typescript": "^5.8.3"
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.9.3"
   }
 }
