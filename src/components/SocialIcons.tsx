@@ -2,18 +2,18 @@ import { socialLinks } from '@/config';
 
 export const SocialIcons = () => {
   return (
-    <div className="flex gap-6 justify-center">
+    <div className="flex gap-4 sm:gap-6 justify-center">
       {socialLinks.map(({ name, href, Icon, className }) => {
         if (!Icon) return null;
-        
+
         return (
-          <a 
+          <a
             key={name}
             href={href}
             target="_blank"
             rel="noopener noreferrer"
             className={`group relative overflow-hidden transition-all duration-300 ease-out
-              flex items-center justify-center w-14 h-14 rounded-2xl
+              flex items-center justify-center w-16 h-16 sm:w-18 sm:h-18 rounded-2xl
               bg-white/10 dark:bg-black/20 backdrop-blur-lg
               border border-white/20 dark:border-white/10
               shadow-lg shadow-black/10 dark:shadow-black/30
@@ -26,9 +26,9 @@ export const SocialIcons = () => {
             title={name}
           >
             <span className="sr-only">{name}</span>
-            <Icon 
+            <Icon
               className={className}
-              style={{ 
+              style={{
                 color: 'currentColor',
                 transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 backgroundColor: 'transparent',

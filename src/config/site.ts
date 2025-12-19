@@ -1,5 +1,5 @@
 export const site = {
-  title: "JB | Building startups",
+  title: "JB Bouhier",
   description: "Building startups",
   url: process.env.SITE_URL || 'https://jbouhier.com',
 } as const;
