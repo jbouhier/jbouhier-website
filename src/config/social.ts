@@ -12,7 +12,7 @@ export interface SocialLink {
 export const socialLinks: SocialLink[] = [
   {
     name: 'X',
-    href: 'https://x.com/jb_notacat',
+    href: 'https://x.com/jb_bouhier',
     Icon: FaXTwitter,
     className: 'w-7 h-7',
   },
@@ -24,7 +24,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: 'YouTube',
-    href: 'https://www.youtube.com/@jb-notacat',
+    href: 'https://www.youtube.com/@jb-bouhier',
     Icon: FaYoutube,
     className: 'w-9 h-9',
   },
