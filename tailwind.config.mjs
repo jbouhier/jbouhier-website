@@ -45,26 +45,23 @@ export default {
           800: '#ff004f',
           900: '#cc003f',
         },
+        // Surface colors for cards and containers
+        surface: {
+          50: '#f9fafb',
+          100: '#f3f4f6',
+          200: '#e5e7eb',
+          300: '#d1d5db',
+          400: '#9ca3af',
+          500: '#6b7280',
+          600: '#4b5563',
+          700: '#374151',
+          800: '#1f2937',
+          900: '#111827',
+        },
       },
       backgroundImage: {
         'pink-gradient': 'linear-gradient(to bottom, var(--primary-50), var(--primary-100))',
-        'pink-gradient-dark': 'linear-gradient(to bottom, var(--primary-900), var(--primary-800))',
-      },
-      // Surface colors for cards and containers
-      surface: {
-        DEFAULT: '#ffffff',
-        dark: '#1f2937',
-      },
-      // Border colors
-      border: {
-        DEFAULT: '#e5e7eb',
-        dark: '#374151',
-      },
-      // Text colors
-      text: {
-        primary: '#1f2937',
-        secondary: '#4b5563',
-        light: '#f3f4f6',
+        'pink-gradient-dark': 'linear-gradient(to bottom, var(--gray-900), var(--gray-800))',
       },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],

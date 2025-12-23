@@ -1,3 +1,2 @@
-export * from './site';
-export * from './social';
-export * from './products';
+export * from './site'
+export * from './social'

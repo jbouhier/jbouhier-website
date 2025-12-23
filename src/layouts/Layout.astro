@@ -2,6 +2,7 @@
 // Import global styles
 import '@/global.css';
 import Analytics from '@vercel/analytics/astro'
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 // Import site config
 import { site } from '@/config';
@@ -34,16 +35,25 @@ const description = Astro.props.description || site.description;
     <meta name="twitter:image" content="/social-preview.jpg" />
     
     <title>{title}</title>
-    
+
     <!-- Preload Inter font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
+    <!-- Theme script - runs before page load to prevent flash -->
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+      })();
+    </script>
+
     <Analytics />
   </head>
   
-  <body class="min-h-screen bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-primary-900 dark:to-primary-800 text-gray-900 dark:text-gray-100 antialiased transition-colors duration-200">
+  <body class="min-h-screen bg-gradient-to-br from-primary-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-gray-900 dark:text-gray-100 antialiased transition-colors duration-200">
+    <ThemeToggle client:load />
     <slot />
   </body>
 </html>

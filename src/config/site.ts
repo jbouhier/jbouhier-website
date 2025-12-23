@@ -7,5 +7,9 @@ export const site = {
 export const author = {
   firstName: "JB",
   lastName: "Bouhier",
-  subtitle: "Building startups",
+} as const;
+
+export const company = {
+  name: "Not a cat ventures",
+  url: "https://notacatventures.com",
 } as const;
