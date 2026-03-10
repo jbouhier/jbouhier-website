@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
 
@@ -7,7 +7,6 @@ export default defineConfig({
   output: 'static',
   site: 'https://www.jbouhier.com',
   integrations: [
-    tailwind(), 
     sitemap(), 
     react()
   ],
@@ -15,6 +14,7 @@ export default defineConfig({
     inlineStylesheets: 'auto',
   },
   vite: {
+    plugins: [tailwindcss()],
     css: {
       devSourcemap: true,
     },

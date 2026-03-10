@@ -1,21 +1,32 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary-50: #fff0f5;
+  --color-primary-100: #ffe4e9;
+  --color-primary-200: #ffd9e4;
+  --color-primary-300: #ffc4d9;
+  --color-primary-400: #ff9fbf;
+  --color-primary-500: #ff75a3;
+  --color-primary-600: #ff4b87;
+  --color-primary-700: #ff216b;
+  --color-primary-800: #ff004f;
+  --color-primary-900: #cc003f;
+
+  --color-surface-50: #f9fafb;
+  --color-surface-100: #f3f4f6;
+  --color-surface-200: #e5e7eb;
+  --color-surface-300: #d1d5db;
+  --color-surface-400: #9ca3af;
+  --color-surface-500: #6b7280;
+  --color-surface-600: #4b5563;
+  --color-surface-700: #374151;
+  --color-surface-800: #1f2937;
+  --color-surface-900: #111827;
+}
 
 @layer base {
-  :root {
-    --color-primary-50: 255 240 245;
-    --color-primary-100: 255 228 233;
-    --color-primary-200: 255 217 228;
-    --color-primary-300: 255 196 217;
-    --color-primary-400: 255 159 191;
-    --color-primary-500: 255 117 163;
-    --color-primary-600: 255 75 135;
-    --color-primary-700: 255 33 107;
-    --color-primary-800: 255 0 79;
-    --color-primary-900: 204 0 63;
-  }
-
   html {
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
@@ -54,7 +65,7 @@
   .btn-primary {
     @apply bg-gradient-to-r from-primary-600 to-primary-800 text-white 
            hover:shadow-lg hover:-translate-y-0.5 hover:from-primary-700 hover:to-primary-900
-           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-opacity-50;
+           focus:ring-2 focus:ring-primary-500;
   }
   
   .btn-outline {
