@@ -30,7 +30,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/jbbouhier',
+    href: 'https://www.linkedin.com/in/jbouhier',
     Icon: FaLinkedin,
     className: 'w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8',
   },
