@@ -1,6 +1,6 @@
 export const site = {
   title: "JB Bouhier",
-  description: "Building startups",
+  description: "Shippinh startups that go mrrrrp",
   url: process.env.SITE_URL || 'https://jbouhier.com',
 } as const;
 
@@ -10,6 +10,6 @@ export const author = {
 } as const;
 
 export const company = {
-  name: "Not a cat ventures",
-  url: "https://notacatventures.com",
+  name: "Not a cat",
+  url: "https://notacat.co",
 } as const;
